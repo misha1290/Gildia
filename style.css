@@ -10,6 +10,16 @@ body {
     min-height: 100vh;
 }
 
+/* Обёртка для центрирования всего контента по вертикали */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
 /* Деревянная доска */
 .board-container {
     background-color: #4a3020;
@@ -24,8 +34,8 @@ body {
     border-radius: 8px;
     padding: 40px;
     box-shadow: inset 0 0 40px rgba(0,0,0,0.8), 0 15px 30px rgba(0,0,0,0.9);
-    max-width: 1200px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .board-title {
@@ -122,3 +132,80 @@ body {
     font-size: 1.4em;
     letter-spacing: 2px;
 }
+
+/* Контейнер реестра */
+.roster-container {
+    background-color: #21150e;
+    border: 8px solid #1a100b;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+.roster-title {
+    color: #e8d0a9;
+    font-family: 'MedievalSharp', cursive;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Секция каждого ранга */
+.rank-section {
+    margin-bottom: 25px;
+}
+
+.rank-title {
+    color: #a68a5c;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5em;
+    border-bottom: 1px dashed #a68a5c;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.tokens-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Базовый стиль жетона */
+.token {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.1em;
+    padding: 8px 18px;
+    border-radius: 25px;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.4), 0 3px 6px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+    cursor: default;
+}
+
+.token:hover {
+    transform: translateY(-3px);
+}
+
+/* Выделение опыта у игроков */
+.player-xp {
+    font-size: 0.85em;
+    opacity: 0.9;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+}
+
+/* --- ЦВЕТА ЖЕТОНОВ ПО РАНГАМ --- */
+.token-a { background: linear-gradient(135deg, #f0f8ff 0%, #b0c4de 50%, #9caec4 100%); color: #1a2530; border-color: #fff; box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(176, 196, 222, 0.6); }
+.token-b { background: linear-gradient(135deg, #ffe066 0%, #d4af37 50%, #aa8c2c 100%); color: #3b2a00; }
+.token-c { background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #8c8c8c 100%); color: #2b2b2b; }
+.token-d { background: linear-gradient(135deg, #a1a5a8 0%, #585d61 50%, #35383a 100%); color: #f0f0f0; }
+.token-e { background: linear-gradient(135deg, #e3a871 0%, #cd7f32 50%, #8b5622 100%); color: #2e1a06; }
+.token-f { background: linear-gradient(135deg, #e0965c 0%, #b87333 50%, #7d4d20 100%); color: #ffffff; }
